@@ -11,9 +11,10 @@ A complete bid request system for Steven Design Co, featuring a professional for
 - **Secure Backend API** with validation and rate limiting
 
 ## 🚀 Live Demo
-- **Main Form**: [View Form](https://vandy1690.github.io/sdc-webform-/sdc_bidrequest.html)
-- **Admin Dashboard**: [View Dashboard](https://vandy1690.github.io/sdc-webform-/admin-dashboard.html)
-- **Standalone Form**: [View Standalone](https://vandy1690.github.io/sdc-webform-/standalone-form.html)
+- **Project Portal**: [https://s6g.7bf.mywebsitetransfer.com/sdc_form/](https://s6g.7bf.mywebsitetransfer.com/sdc_form/)
+- **Main Form**: [Bid Request Form](https://s6g.7bf.mywebsitetransfer.com/sdc_form/sdc_bidrequest.html)
+- **Admin Dashboard**: [Admin Dashboard](https://s6g.7bf.mywebsitetransfer.com/sdc_form/admin-dashboard.html)
+- **Standalone Form**: [Standalone Form](https://s6g.7bf.mywebsitetransfer.com/sdc_form/standalone-form.html)
 
 ## 📱 What Clients See
 1. **Professional Form** with SDC branding

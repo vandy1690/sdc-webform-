@@ -37,6 +37,12 @@ sdc_webform/
 - Main site: https://sdc-webform.ddev.site
 - Webform: https://sdc-webform.ddev.site/sdc_bidrequest.html
 
+## 🌐 Live Demo
+
+- **Project Portal**: [https://s6g.7bf.mywebsitetransfer.com/sdc_form/](https://s6g.7bf.mywebsitetransfer.com/sdc_form/)
+- **Bid Request Form**: [https://s6g.7bf.mywebsitetransfer.com/sdc_form/sdc_bidrequest.html](https://s6g.7bf.mywebsitetransfer.com/sdc_form/sdc_bidrequest.html)
+- **Admin Dashboard**: [https://s6g.7bf.mywebsitetransfer.com/sdc_form/admin-dashboard.html](https://s6g.7bf.mywebsitetransfer.com/sdc_form/admin-dashboard.html)
+
 3. **Custom DDEV commands:**
    ```bash
    # Start with helpful output
