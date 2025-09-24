@@ -1,0 +1,23 @@
+#!/bin/bash
+
+## Description: Enable live reload for development
+## Usage: live-reload
+## Example: "ddev live-reload"
+
+echo "Setting up live reload for static files..."
+
+# Install inotify-tools if not present
+if ! command -v inotifywait &> /dev/null; then
+    echo "Installing inotify-tools..."
+    apt-get update && apt-get install -y inotify-tools
+fi
+
+echo "Watching for file changes in /var/www/html..."
+echo "Press Ctrl+C to stop watching"
+
+# Watch for changes and reload nginx
+inotifywait -m -r -e modify,create,delete /var/www/html --format '%w%f %e' | while read file event; do
+    echo "File $file was $event"
+    echo "Reloading nginx..."
+    nginx -s reload
+done

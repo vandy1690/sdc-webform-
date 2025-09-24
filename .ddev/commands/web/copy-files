@@ -1,0 +1,20 @@
+#!/bin/bash
+
+## Description: Copy project files to web root
+## Usage: copy-files
+## Example: "ddev copy-files"
+
+echo "Copying project files to web root..."
+
+# Ensure web root exists
+mkdir -p /var/www/html
+
+# Copy all files from project root to web root
+echo "Copying HTML files..."
+cp -r /var/www/html/* /var/www/html/ 2>/dev/null || true
+
+# Set proper permissions
+chmod -R 755 /var/www/html
+
+echo "✅ Files copied successfully!"
+echo "📁 Files are now available in /var/www/html"

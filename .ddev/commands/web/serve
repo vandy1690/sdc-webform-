@@ -1,0 +1,15 @@
+#!/bin/bash
+
+## Description: Serve the static files with nginx
+## Usage: serve
+## Example: "ddev serve"
+
+echo "Starting nginx server for static files..."
+
+# Copy project files to web root
+echo "Copying project files to web root..."
+cp -r /var/www/html/* /var/www/html/ 2>/dev/null || true
+
+# Start nginx
+echo "Starting nginx..."
+nginx -g "daemon off;"

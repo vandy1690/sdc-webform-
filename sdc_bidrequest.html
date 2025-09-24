@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bid Request Form - Steven Design Co</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js for simple interactivity -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        :root {
+            --highlight: rgb(204, 255, 0);
+        }
+        .highlight { color: var(--highlight); }
+        .bg-highlight { background-color: var(--highlight); }
+        .border-highlight { border-color: var(--highlight); }
+        .text-highlight { color: var(--highlight); }
+    </style>
+</head>
+<body class="bg-black min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-black shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-24">
+                <div class="flex items-center">
+                    <svg width="180" height="30" viewBox="0 0 994 164" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M934.499 137.593C932.384 137.593 930.665 136.954 929.343 135.675C928.02 134.269 927.359 132.542 927.359 130.497V41.6952C927.359 39.6494 928.02 37.9872 929.343 36.7085C930.665 35.302 932.384 34.5988 934.499 34.5988H986.062C988.178 34.5988 989.896 35.302 991.219 36.7085C992.541 37.9872 993.202 39.6494 993.202 41.6952V130.497C993.202 132.542 992.541 134.269 991.219 135.675C989.896 136.954 988.178 137.593 986.062 137.593H934.499ZM960.281 119.372C961.338 119.372 962.132 119.181 962.66 118.797C963.189 118.414 963.454 117.774 963.454 116.879V55.5045C963.454 54.4816 963.189 53.7783 962.66 53.3948C962.132 53.0112 961.338 52.8194 960.281 52.8194C959.223 52.8194 958.43 53.0112 957.901 53.3948C957.372 53.6505 957.107 54.2898 957.107 55.3127V116.687C957.107 117.582 957.372 118.286 957.901 118.797C958.43 119.181 959.223 119.372 960.281 119.372Z" fill="var(--highlight)"/>
+                        <path d="M859.377 137.593C856.998 137.593 855.014 136.698 853.428 134.908C851.973 133.118 851.246 130.944 851.246 128.387V9.47353C851.246 6.91625 851.973 4.74257 853.428 2.95247C855.014 1.16238 856.998 0.267334 859.377 0.267334H913.122C915.502 0.267334 917.419 1.16238 918.873 2.95247C920.46 4.74257 921.253 6.91625 921.253 9.47353V60.2994H889.72V23.4746C889.72 22.196 889.456 21.3009 888.927 20.7895C888.53 20.278 887.803 20.0223 886.746 20.0223C885.688 20.0223 884.895 20.278 884.366 20.7895C883.837 21.1731 883.572 22.0042 883.572 23.2828V114.386C883.572 115.664 883.771 116.559 884.167 117.071C884.696 117.582 885.49 117.838 886.547 117.838C887.605 117.838 888.398 117.646 888.927 117.263C889.456 116.751 889.72 115.856 889.72 114.578V77.561H921.253V128.387C921.253 130.944 920.46 133.118 918.873 134.908C917.419 136.698 915.502 137.593 913.122 137.593H859.377Z" fill="var(--highlight)"/>
+                        <path d="M761.392 137.593V34.5988H791.933V41.5034H793.916C793.916 39.5855 794.511 37.9872 795.701 36.7085C797.023 35.302 798.676 34.5988 800.659 34.5988H821.681C823.796 34.5988 825.515 35.302 826.837 36.7085C828.159 37.9872 828.821 39.6494 828.821 41.6952V137.593H798.279V58.3814C798.279 57.3585 798.015 56.6553 797.486 56.2717C796.957 55.8881 796.164 55.6963 795.106 55.6963C794.048 55.6963 793.255 55.8881 792.726 56.2717C792.197 56.5274 791.933 57.1667 791.933 58.1896V137.593H761.392Z" fill="var(--highlight)"/>
+                        <path d="M694.936 163.294C692.82 163.294 691.102 162.59 689.779 161.184C688.457 159.905 687.796 158.243 687.796 156.197V137.593H717.346V144.306C717.346 145.201 717.61 145.84 718.139 146.224C718.668 146.735 719.461 146.991 720.519 146.991C721.577 146.991 722.37 146.799 722.899 146.416C723.428 146.032 723.692 145.393 723.692 144.498V124.935H721.709C721.709 126.853 721.048 128.515 719.726 129.921C718.536 131.2 716.949 131.839 714.966 131.839H694.737C692.622 131.839 690.903 131.2 689.581 129.921C688.259 128.515 687.598 126.789 687.598 124.743V41.6952C687.598 39.6494 688.259 37.9872 689.581 36.7085C690.903 35.302 692.622 34.5988 694.737 34.5988H712.983C714.966 34.5988 716.553 35.302 717.743 36.7085C719.065 37.9872 719.726 39.5855 719.726 41.5034H721.709V34.5988H754.234V156.197C754.234 158.243 753.573 159.905 752.25 161.184C750.928 162.59 749.209 163.294 747.094 163.294H694.936ZM720.519 111.701C721.577 111.701 722.37 111.509 722.899 111.125C723.428 110.742 723.692 110.102 723.692 109.207V57.6143C723.692 56.5914 723.428 55.8881 722.899 55.5045C722.37 55.1209 721.577 54.9291 720.519 54.9291C719.461 54.9291 718.668 55.1209 718.139 55.5045C717.61 55.7602 717.346 56.3996 717.346 57.4225V109.016C717.346 109.911 717.61 110.614 718.139 111.125C718.668 111.509 719.461 111.701 720.519 111.701Z" fill="var(--highlight)"/>
+                        <path d="M648.674 137.593V34.5988H680.604V137.593H648.674ZM648.873 28.6531V0.459127H680.406V28.6531H648.873Z" fill="var(--highlight)"/>
+                        <path d="M583.56 137.593C581.445 137.593 579.726 136.954 578.404 135.675C577.082 134.269 576.421 132.542 576.421 130.497V103.262L606.169 103.453V118.797C606.169 119.692 606.433 120.331 606.962 120.715C607.491 121.099 608.218 121.29 609.144 121.29C610.201 121.29 610.995 121.099 611.523 120.715C612.052 120.331 612.317 119.692 612.317 118.797V103.453C612.317 102.431 612.119 101.599 611.722 100.96C611.325 100.321 610.466 99.9372 609.144 99.8093L584.552 97.316C582.172 97.0602 580.189 96.1013 578.602 94.439C577.148 92.7768 576.421 90.6031 576.421 87.918V41.6952C576.421 39.6494 577.082 37.9872 578.404 36.7085C579.726 35.302 581.445 34.5988 583.56 34.5988H634.925C637.041 34.5988 638.76 35.302 640.082 36.7085C641.404 37.9872 642.065 39.6494 642.065 41.6952V68.9302H612.317V53.3948C612.317 52.4997 612.052 51.8604 611.523 51.4768C611.127 51.0932 610.4 50.9014 609.342 50.9014C608.284 50.9014 607.491 51.0932 606.962 51.4768C606.433 51.8604 606.169 52.4997 606.169 53.3948V68.5466C606.169 69.5695 606.367 70.4007 606.764 71.04C607.16 71.6793 608.02 72.0629 609.342 72.1907L633.735 74.8759C636.38 75.1316 638.429 76.0906 639.883 77.7528C641.338 79.2872 642.065 81.333 642.065 83.8903V130.497C642.065 132.542 641.404 134.269 640.082 135.675C638.76 136.954 637.041 137.593 634.925 137.593H583.56Z" fill="var(--highlight)"/>
+                        <path d="M511.906 137.593C509.791 137.593 508.072 136.954 506.75 135.675C505.428 134.269 504.767 132.542 504.767 130.497V41.6952C504.767 39.6494 505.428 37.9872 506.75 36.7085C508.072 35.302 509.791 34.5988 511.906 34.5988H563.073C565.188 34.5988 566.907 35.302 568.229 36.7085C569.551 37.9872 570.212 39.6494 570.212 41.6952V92.5211H534.515V118.797C534.515 119.692 534.779 120.331 535.308 120.715C535.837 121.099 536.564 121.29 537.49 121.29C538.68 121.29 539.539 121.099 540.068 120.715C540.597 120.331 540.861 119.692 540.861 118.797V98.6586H570.212V130.497C570.212 132.542 569.551 134.269 568.229 135.675C566.907 136.954 565.188 137.593 563.073 137.593H511.906ZM534.515 73.9169H540.861V53.3948C540.861 52.4997 540.597 51.8604 540.068 51.4768C539.539 51.0932 538.746 50.9014 537.688 50.9014C536.63 50.9014 535.837 51.0932 535.308 51.4768C534.779 51.8604 534.515 52.4997 534.515 53.3948V73.9169Z" fill="var(--highlight)"/>
+                        <path d="M427.114 137.593V0.267334H490.378C492.758 0.267334 494.675 1.16238 496.129 2.95247C497.716 4.74257 498.509 6.91625 498.509 9.47353V128.387C498.509 130.944 497.716 133.118 496.129 134.908C494.675 136.698 492.758 137.593 490.378 137.593H427.114ZM460.035 117.455H464.001C464.266 117.455 464.53 117.391 464.794 117.263C465.059 117.135 465.257 117.007 465.389 116.879C465.654 116.623 465.852 116.368 465.984 116.112C466.117 115.856 466.183 115.537 466.183 115.153V22.5156C466.183 22.132 466.05 21.8124 465.786 21.5567C465.654 21.1731 465.389 20.9173 464.993 20.7895C464.728 20.5338 464.332 20.4059 463.803 20.4059H460.035V117.455Z" fill="var(--highlight)"/>
+                        <path d="M336.862 137.593V34.5988H367.404V41.5034H369.387C369.387 39.5855 369.982 37.9872 371.172 36.7085C372.494 35.302 374.147 34.5988 376.13 34.5988H397.152C399.267 34.5988 400.986 35.302 402.308 36.7085C403.63 37.9872 404.291 39.6494 404.291 41.6952V137.593H373.75V58.3814C373.75 57.3585 373.485 56.6553 372.957 56.2717C372.428 55.8881 371.634 55.6963 370.577 55.6963C369.519 55.6963 368.726 55.8881 368.197 56.2717C367.668 56.5274 367.404 57.1667 367.404 58.1896V137.593H336.862Z" fill="var(--highlight)"/>
+                        <path d="M271.753 137.593C269.637 137.593 267.919 136.954 266.597 135.675C265.274 134.269 264.613 132.542 264.613 130.497V41.6952C264.613 39.6494 265.274 37.9872 266.597 36.7085C267.919 35.302 269.637 34.5988 271.753 34.5988H322.919C325.035 34.5988 326.754 35.302 328.076 36.7085C329.398 37.9872 330.059 39.6494 330.059 41.6952V92.5211H294.361V118.797C294.361 119.692 294.626 120.331 295.155 120.715C295.684 121.099 296.411 121.29 297.336 121.29C298.526 121.29 299.385 121.099 299.914 120.715C300.443 120.331 300.708 119.692 300.708 118.797V98.6586H330.059V130.497C330.059 132.542 329.398 134.269 328.076 135.675C326.754 136.954 325.035 137.593 322.919 137.593H271.753ZM294.361 73.9169H300.708V53.3948C300.708 52.4997 300.443 51.8604 299.914 51.4768C299.385 51.0932 298.592 50.9014 297.534 50.9014C296.477 50.9014 295.684 51.0932 295.155 51.4768C294.626 51.8604 294.361 52.4997 294.361 53.3948V73.9169Z" fill="var(--highlight)"/>
+                        <path d="M207.15 137.593L192.474 34.5988H225.99L228.767 65.8615L230.155 99.8093H231.147L232.733 65.8615L235.708 34.5988H262.283L247.607 137.593H207.15Z" fill="var(--highlight)"/>
+                        <path d="M131.728 137.593C129.612 137.593 127.894 136.954 126.572 135.675C125.249 134.269 124.588 132.542 124.588 130.497V41.6952C124.588 39.6494 125.249 37.9872 126.572 36.7085C127.894 35.302 129.612 34.5988 131.728 34.5988H182.895C185.01 34.5988 186.729 35.302 188.051 36.7085C189.373 37.9872 190.034 39.6494 190.034 41.6952V92.5211H154.336V118.797C154.336 119.692 154.601 120.331 155.13 120.715C155.659 121.099 156.386 121.29 157.311 121.29C158.501 121.29 159.361 121.099 159.889 120.715C160.418 120.331 160.683 119.692 160.683 118.797V98.6586H190.034V130.497C190.034 132.542 189.373 134.269 188.051 135.675C186.729 136.954 185.01 137.593 182.895 137.593H131.728ZM154.336 73.9169H160.683V53.3948C160.683 52.4997 160.418 51.8604 159.889 51.4768C159.361 51.0932 158.567 50.9014 157.51 50.9014C156.452 50.9014 155.659 51.0932 155.13 51.4768C154.601 51.8604 154.336 52.4997 154.336 53.3948V73.9169Z" fill="var(--highlight)"/>
+                        <path d="M84.8639 137.593C82.7485 137.593 81.0297 136.954 79.7076 135.675C78.3854 134.269 77.7244 132.542 77.7244 130.497V21.7485L109.654 11.1997V34.5988H120.165V56.4635H109.654V114.002C109.654 114.514 109.786 114.961 110.051 115.345C110.447 115.601 110.91 115.728 111.439 115.728H120.165V137.593H84.8639Z" fill="var(--highlight)"/>
+                        <path d="M8.76468 137.593C6.38483 137.593 4.40163 136.698 2.81507 134.908C1.36072 133.118 0.633545 130.944 0.633545 128.387V89.8359L32.9598 90.2195V115.728C32.9598 117.007 33.1581 117.902 33.5547 118.414C34.0836 118.925 34.943 119.181 36.1329 119.181C37.1906 119.181 37.9178 118.925 38.3144 118.414C38.8433 117.902 39.1077 117.007 39.1077 115.728V90.2195C39.1077 88.813 38.7771 87.8541 38.1161 87.3426C37.455 86.7033 36.3312 86 34.7446 85.2328L10.7479 74.3005C8.23582 73.1497 5.92209 71.6793 3.80667 69.8892C1.69125 68.0991 0.633545 65.414 0.633545 61.8338V9.47353C0.633545 6.91625 1.36072 4.74257 2.81507 2.95247C4.40163 1.16238 6.38483 0.267334 8.76468 0.267334H63.3028C65.6826 0.267334 67.5997 1.16238 69.054 2.95247C70.6406 4.74257 71.4339 6.91625 71.4339 9.47353V48.0245H39.1077V21.9402C39.1077 20.7895 38.8433 19.9584 38.3144 19.4469C37.9178 18.9355 37.1906 18.6797 36.1329 18.6797C35.0752 18.6797 34.2819 18.9355 33.753 19.4469C33.2242 19.9584 32.9598 20.7895 32.9598 21.9402V47.4491C32.9598 48.8556 33.2242 49.8146 33.753 50.326C34.4141 50.8375 35.5379 51.4768 37.1245 52.244L61.5179 63.5599C64.2944 64.8386 66.6081 66.309 68.4591 67.9712C70.4423 69.6335 71.4339 72.1907 71.4339 75.6431V128.387C71.4339 130.944 70.6406 133.118 69.054 134.908C67.5997 136.698 65.6826 137.593 63.3028 137.593H8.76468Z" fill="var(--highlight)"/>
+                    </svg>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-500">Request a Quote</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-3xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <!-- Header Section -->
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-highlight mb-4">Request a Project Bid</h2>
+            <p class="text-lg text-white">Tell us about your creative project and we'll get back to you within 24 hours with a detailed quote.</p>
+        </div>
+
+        <!-- Form Container -->
+        <div class="bg-white rounded-lg shadow-lg p-8" x-data="bidForm()">
+            <form @submit.prevent="submitForm" class="space-y-6">
+                <!-- Contact Information Section -->
+                <div class="border-b border-gray-200 pb-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Contact Information</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- First Name -->
+                        <div>
+                            <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">
+                                First Name <span class="text-red-500">*</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                id="firstName" 
+                                x-model="formData.firstName"
+                                required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                placeholder="John"
+                            >
+                        </div>
+
+                        <!-- Last Name -->
+                        <div>
+                            <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">
+                                Last Name <span class="text-red-500">*</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                id="lastName" 
+                                x-model="formData.lastName"
+                                required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                placeholder="Doe"
+                            >
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+                                Email Address <span class="text-red-500">*</span>
+                            </label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                x-model="formData.email"
+                                required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                placeholder="john@example.com"
+                            >
+                        </div>
+
+                        <!-- Phone -->
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
+                                Phone Number
+                            </label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                x-model="formData.phone"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                placeholder="(555) 123-4567"
+                            >
+                        </div>
+
+                        <!-- Company -->
+                        <div class="md:col-span-2">
+                            <label for="company" class="block text-sm font-medium text-gray-700 mb-1">
+                                Company Name
+                            </label>
+                            <input 
+                                type="text" 
+                                id="company" 
+                                x-model="formData.company"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                placeholder="Your Company Inc."
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Information Section -->
+                <div class="border-b border-gray-200 pb-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Project Details</h3>
+                    
+                    <!-- Project Type -->
+                    <div class="mb-4">
+                        <label for="projectType" class="block text-sm font-medium text-gray-700 mb-1">
+                            Project Type <span class="text-red-500">*</span>
+                        </label>
+                        <select 
+                            id="projectType" 
+                            x-model="formData.projectType"
+                            required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                        >
+                            <option value="">Select a project type</option>
+                            <option value="brand-identity">Brand Identity</option>
+                            <option value="web-design">Web Design</option>
+                            <option value="print-design">Print Design</option>
+                            <option value="digital-marketing">Digital Marketing</option>
+                            <option value="ui-ux">UI/UX Design</option>
+                            <option value="packaging">Packaging Design</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Project Title -->
+                    <div class="mb-4">
+                        <label for="projectTitle" class="block text-sm font-medium text-gray-700 mb-1">
+                            Project Title <span class="text-red-500">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="projectTitle" 
+                            x-model="formData.projectTitle"
+                            required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                            placeholder="e.g., Restaurant Website Redesign"
+                        >
+                    </div>
+
+                    <!-- Project Description -->
+                    <div class="mb-4">
+                        <label for="description" class="block text-sm font-medium text-gray-700 mb-1">
+                            Project Description <span class="text-red-500">*</span>
+                        </label>
+                        <textarea 
+                            id="description" 
+                            x-model="formData.description"
+                            required
+                            rows="4"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                            placeholder="Please provide a detailed description of your project, including objectives, target audience, and any specific requirements..."
+                        ></textarea>
+                    </div>
+
+                    <!-- Budget Range -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="budget" class="block text-sm font-medium text-gray-700 mb-1">
+                                Budget Range <span class="text-red-500">*</span>
+                            </label>
+                            <select 
+                                id="budget" 
+                                x-model="formData.budget"
+                                required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                            >
+                                <option value="">Select budget range</option>
+                                <option value="under-5k">Under $5,000</option>
+                                <option value="5k-10k">$5,000 - $10,000</option>
+                                <option value="10k-25k">$10,000 - $25,000</option>
+                                <option value="25k-50k">$25,000 - $50,000</option>
+                                <option value="50k-100k">$50,000 - $100,000</option>
+                                <option value="over-100k">Over $100,000</option>
+                            </select>
+                        </div>
+
+                        <!-- Timeline -->
+                        <div>
+                            <label for="timeline" class="block text-sm font-medium text-gray-700 mb-1">
+                                Project Timeline <span class="text-red-500">*</span>
+                            </label>
+                            <select 
+                                id="timeline" 
+                                x-model="formData.timeline"
+                                required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                            >
+                                <option value="">Select timeline</option>
+                                <option value="asap">ASAP</option>
+                                <option value="1-month">Within 1 month</option>
+                                <option value="2-3-months">2-3 months</option>
+                                <option value="3-6-months">3-6 months</option>
+                                <option value="6-months-plus">6+ months</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="pb-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Additional Information</h3>
+                    
+                    <!-- Services Needed (Checkboxes) -->
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            Services Needed (check all that apply)
+                        </label>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input 
+                                    type="checkbox" 
+                                    x-model="formData.services"
+                                    value="creative-direction"
+                                    class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                                >
+                                <span class="ml-2 text-sm text-gray-700">Creative Direction</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input 
+                                    type="checkbox" 
+                                    x-model="formData.services"
+                                    value="design"
+                                    class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                                >
+                                <span class="ml-2 text-sm text-gray-700">Design</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input 
+                                    type="checkbox" 
+                                    x-model="formData.services"
+                                    value="development"
+                                    class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                                >
+                                <span class="ml-2 text-sm text-gray-700">Development</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input 
+                                    type="checkbox" 
+                                    x-model="formData.services"
+                                    value="copywriting"
+                                    class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                                >
+                                <span class="ml-2 text-sm text-gray-700">Copywriting</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input 
+                                    type="checkbox" 
+                                    x-model="formData.services"
+                                    value="strategy"
+                                    class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                                >
+                                <span class="ml-2 text-sm text-gray-700">Strategy</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- How did you hear about us -->
+                    <div>
+                        <label for="referral" class="block text-sm font-medium text-gray-700 mb-1">
+                            How did you hear about us?
+                        </label>
+                        <select 
+                            id="referral" 
+                            x-model="formData.referral"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                        >
+                            <option value="">Please select</option>
+                            <option value="search">Search Engine</option>
+                            <option value="social">Social Media</option>
+                            <option value="referral">Referral</option>
+                            <option value="portfolio">Portfolio Site</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="flex items-center justify-between">
+                    <p class="text-sm text-gray-500">
+                        <span class="text-red-500">*</span> Required fields
+                    </p>
+                    <button 
+                        type="submit"
+                        :disabled="isSubmitting"
+                        class="px-6 py-3 bg-black text-highlight font-medium rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    >
+                        <span x-show="!isSubmitting">Submit Bid Request</span>
+                        <span x-show="isSubmitting">Processing...</span>
+                    </button>
+                </div>
+            </form>
+
+            <!-- Success Message -->
+            <div x-show="showSuccess" x-cloak class="mt-6 p-4 bg-green-50 border border-green-200 rounded-md">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm font-medium text-green-800">
+                            Success! Your bid request has been submitted.
+                        </p>
+                        <p class="mt-1 text-sm text-green-700">
+                            We'll review your project details and get back to you within 24 hours.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error Message -->
+            <div x-show="showError" x-cloak class="mt-6 p-4 bg-red-50 border border-red-200 rounded-md">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm font-medium text-red-800">
+                            Error submitting your request
+                        </p>
+                        <p class="mt-1 text-sm text-red-700" x-text="errorMessage">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div class="mt-12 text-center">
+            <div class="flex justify-center space-x-8 text-gray-400">
+                <div>
+                    <svg class="h-8 w-8 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                    </svg>
+                    <p class="text-sm">25+ Years Experience</p>
+                </div>
+                <div>
+                    <svg class="h-8 w-8 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <p class="text-sm">100% Secure</p>
+                </div>
+                <div>
+                    <svg class="h-8 w-8 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"/>
+                        <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"/>
+                    </svg>
+                    <p class="text-sm">24hr Response</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-20">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-sm">© 2025 Steven Design Co. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function bidForm() {
+            return {
+                formData: {
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    phone: '',
+                    company: '',
+                    projectType: '',
+                    projectTitle: '',
+                    description: '',
+                    budget: '',
+                    timeline: '',
+                    services: [],
+                    referral: ''
+                },
+                isSubmitting: false,
+                showSuccess: false,
+                showError: false,
+                errorMessage: '',
+                
+                async submitForm() {
+                    this.isSubmitting = true;
+                    
+                    try {
+                        // Prepare form data for API
+                        const apiData = {
+                            firstName: this.formData.firstName,
+                            lastName: this.formData.lastName,
+                            email: this.formData.email,
+                            phone: this.formData.phone,
+                            company: this.formData.company,
+                            projectType: this.formData.projectType,
+                            projectTitle: this.formData.projectTitle,
+                            description: this.formData.description,
+                            budget: this.formData.budget,
+                            timeline: this.formData.timeline,
+                            services: this.formData.services,
+                            referral: this.formData.referral
+                        };
+
+                        // Send to backend API
+                        const response = await fetch('/api/bid-request', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(apiData)
+                        });
+
+                        const result = await response.json();
+
+                        if (result.success) {
+                            this.isSubmitting = false;
+                            this.showSuccess = true;
+                            
+                            // Reset form after 5 seconds
+                            setTimeout(() => {
+                                this.resetForm();
+                            }, 5000);
+                        } else {
+                            throw new Error(result.message || 'Submission failed');
+                        }
+                    } catch (error) {
+                        console.error('Form submission error:', error);
+                        this.isSubmitting = false;
+                        this.showError = true;
+                        this.errorMessage = error.message || 'An error occurred while submitting your request. Please try again.';
+                        
+                        // Hide error after 5 seconds
+                        setTimeout(() => {
+                            this.showError = false;
+                        }, 5000);
+                    }
+                },
+                
+                resetForm() {
+                    this.formData = {
+                        firstName: '',
+                        lastName: '',
+                        email: '',
+                        phone: '',
+                        company: '',
+                        projectType: '',
+                        projectTitle: '',
+                        description: '',
+                        budget: '',
+                        timeline: '',
+                        services: [],
+                        referral: ''
+                    };
+                    this.showSuccess = false;
+                    this.showError = false;
+                    this.errorMessage = '';
+                }
+            }
+        }
+    </script>
+
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
+</body>
+</html>

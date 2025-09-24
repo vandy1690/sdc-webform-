@@ -1,0 +1,20 @@
+#!/bin/bash
+
+## Description: Start the DDEV environment
+## Usage: start
+## Example: "ddev start"
+
+echo "Starting DDEV environment for SDC Webform project..."
+echo "This will start nginx to serve your static HTML files."
+echo ""
+
+# Use the original ddev start command to avoid recursion
+/usr/local/bin/ddev start
+
+echo ""
+echo "✅ DDEV environment started successfully!"
+echo "🌐 Your site is available at: https://sdc_webform.ddev.site"
+echo "📁 Main form: https://sdc_webform.ddev.site/sdc_bidrequest.html"
+echo ""
+echo "To stop the environment, run: ddev stop"
+echo "To view logs, run: ddev logs"

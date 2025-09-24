@@ -1,0 +1,34 @@
+#!/bin/bash
+
+## Description: Initial setup for the static site
+## Usage: setup
+## Example: "ddev setup"
+
+echo "Setting up SDC Webform DDEV environment..."
+
+# Update package lists
+echo "Updating package lists..."
+apt-get update
+
+# Install additional tools if needed
+echo "Installing additional tools..."
+apt-get install -y curl wget
+
+# Copy project files to web root
+echo "Copying project files to web root..."
+mkdir -p /var/www/html
+cp -r /var/www/html/* /var/www/html/ 2>/dev/null || true
+
+# Set proper permissions
+chmod -R 755 /var/www/html
+
+# Test nginx configuration
+echo "Testing nginx configuration..."
+nginx -t
+
+echo ""
+echo "✅ Setup completed successfully!"
+echo "🌐 Your static site is ready to serve"
+echo "📁 Main form: /var/www/html/sdc_bidrequest.html"
+echo ""
+echo "To start serving files, run: ddev serve"
