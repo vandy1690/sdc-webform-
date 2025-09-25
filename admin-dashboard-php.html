@@ -29,7 +29,7 @@
                     <h1 class="text-2xl font-bold text-gray-900">SDC Admin Dashboard</h1>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a href="/sdc_bidrequest.html" class="text-sm text-blue-600 hover:text-blue-800">View Form</a>
+                    <a href="/standalone-form-php.html" class="text-sm text-blue-600 hover:text-blue-800">View Form</a>
                     <button @click="refreshData()" class="px-4 py-2 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700">
                         Refresh
                     </button>
@@ -393,7 +393,7 @@
                     this.error = false;
                     
                     try {
-                        const response = await fetch('/api/bid-requests');
+                        const response = await fetch('/api/bid-request.php');
                         const result = await response.json();
                         
                         if (result.success) {
@@ -413,7 +413,7 @@
 
                 async loadStatistics() {
                     try {
-                        const response = await fetch('/api/statistics');
+                        const response = await fetch('/api/statistics.php');
                         const result = await response.json();
                         
                         if (result.success) {
@@ -454,7 +454,7 @@
 
                 async updateStatus(bidId, newStatus) {
                     try {
-                        const response = await fetch(`/api/bid-request/${bidId}/status`, {
+                        const response = await fetch(`/api/bid-request.php/${bidId}/status`, {
                             method: 'PUT',
                             headers: {
                                 'Content-Type': 'application/json',
@@ -492,20 +492,6 @@
                 }
             }
         }
-    </script>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white mt-20">
-        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <p class="text-sm">© <span id="currentYear"></span> Steven Design Co. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Auto-update copyright year
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 
     <style>

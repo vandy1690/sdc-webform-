@@ -365,19 +365,7 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white mt-20">
-        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <p class="text-sm">© <span id="currentYear"></span> Steven Design Co. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
     <script>
-        // Auto-update copyright year
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-        
         function bidForm() {
             return {
                 formData: {
@@ -420,7 +408,7 @@
                         };
 
                         // Update this URL to point to your deployed backend
-                        const API_URL = 'https://your-deployed-backend.herokuapp.com/api/bid-request';
+                        const API_URL = '/api/bid-request.php';
 
                         // Send to backend API
                         const response = await fetch(API_URL, {

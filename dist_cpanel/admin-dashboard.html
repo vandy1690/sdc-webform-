@@ -29,7 +29,7 @@
                     <h1 class="text-2xl font-bold text-gray-900">SDC Admin Dashboard</h1>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a href="/sdc_bidrequest.html" class="text-sm text-blue-600 hover:text-blue-800">View Form</a>
+                    <a href="sdc_bidrequest.html" class="text-sm text-blue-600 hover:text-blue-800">View Form</a>
                     <button @click="refreshData()" class="px-4 py-2 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700">
                         Refresh
                     </button>
@@ -393,7 +393,7 @@
                     this.error = false;
                     
                     try {
-                        const response = await fetch('/api/bid-requests');
+                        const response = await fetch('./api/bid-requests');
                         const result = await response.json();
                         
                         if (result.success) {
@@ -413,7 +413,7 @@
 
                 async loadStatistics() {
                     try {
-                        const response = await fetch('/api/statistics');
+                        const response = await fetch('./api/statistics');
                         const result = await response.json();
                         
                         if (result.success) {

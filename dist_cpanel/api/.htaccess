@@ -1,0 +1,53 @@
+# URL Rewriting for REST API
+RewriteEngine On
+
+# Enable CORS for all requests
+Header always set Access-Control-Allow-Origin "*"
+Header always set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+Header always set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With"
+
+# Handle preflight OPTIONS requests
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^(.*)$ - [R=200,L]
+
+# API routes
+# /api/bid-request -> bid-request.php
+RewriteRule ^bid-request/?$ bid-request.php [L,QSA]
+RewriteRule ^bid-request/(\d+)/?$ bid-request.php/$1 [L,QSA]
+RewriteRule ^bid-request/(\d+)/status/?$ bid-request.php/$1/status [L,QSA]
+
+# /api/statistics -> statistics.php
+RewriteRule ^statistics/?$ statistics.php [L,QSA]
+
+# /api/health -> health.php
+RewriteRule ^health/?$ health.php [L,QSA]
+
+# Security headers
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "DENY"
+Header always set X-XSS-Protection "1; mode=block"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Block access to sensitive files
+<Files "config.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "email.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Set security headers for PHP files
+<FilesMatch "\.(php)$">
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "DENY"
+</FilesMatch>
+
+# Prevent directory browsing
+Options -Indexes
+
+# Set proper MIME types
+AddType application/json .json
+AddType text/html .html .htm
