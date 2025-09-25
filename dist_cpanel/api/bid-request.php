@@ -44,20 +44,20 @@ function handleSubmitBidRequest() {
         'phone' => ['phone' => true],
         'projectType' => [
             'required' => true,
-            'options' => ['brand-identity', 'web-design', 'print-design', 'digital-marketing', 'ui-ux', 'packaging', 'other']
+            'options' => ['digital-design', 'print-design', 'digital-print-design', 'ui-ux-design', 'front-end-development', 'creative-direction', 'strategy-consulting', 'copywriting', 'non-profit', 'other']
         ],
         'projectTitle' => ['required' => true, 'min_length' => 1],
         'description' => ['required' => true, 'min_length' => 10],
         'budget' => [
             'required' => true,
-            'options' => ['under-5k', '5k-10k', '10k-25k', '25k-50k', '50k-100k', 'over-100k']
+            'options' => ['under-500', '500-1k', '1k-2k', '2k-5k', '5k-10k', '10k-15k', '15k-20k', '20k-plus']
         ],
         'timeline' => [
             'required' => true,
             'options' => ['asap', '1-month', '2-3-months', '3-6-months', '6-months-plus']
         ],
         'referral' => [
-            'options' => ['search', 'social', 'referral', 'portfolio', 'other']
+            'options' => ['search', 'linkedin', 'gyde', 'upwork', 'referral', 'stevendesignco', 'other']
         ]
     ];
 

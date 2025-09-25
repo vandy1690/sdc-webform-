@@ -136,8 +136,8 @@ function getAdminEmailTemplate($data) {
                     <h3>Contact Information</h3>
                     <p><strong>Name:</strong> {$data['firstName']} {$data['lastName']}</p>
                     <p><strong>Email:</strong> {$data['email']}</p>
-                    <p><strong>Phone:</strong> " . ($data['phone'] ?: 'Not provided') . "</p>
-                    <p><strong>Company:</strong> " . ($data['company'] ?: 'Not provided') . "</p>
+                    <p><strong>Phone:</strong> " . (isset($data['phone']) && $data['phone'] ? $data['phone'] : 'Not provided') . "</p>
+                    <p><strong>Company:</strong> " . (isset($data['company']) && $data['company'] ? $data['company'] : 'Not provided') . "</p>
                 </div>
 
                 <div class='section'>
@@ -147,7 +147,7 @@ function getAdminEmailTemplate($data) {
                     <p><strong>Budget Range:</strong> " . str_replace('-', ' - ', strtoupper($data['budget'])) . "</p>
                     <p><strong>Timeline:</strong> " . str_replace('-', ' ', strtoupper($data['timeline'])) . "</p>
                     <p><strong>Services Needed:</strong> {$services}</p>
-                    <p><strong>How they heard about us:</strong> " . ($data['referral'] ?: 'Not specified') . "</p>
+                    <p><strong>How they heard about us:</strong> " . (isset($data['referral']) && $data['referral'] ? $data['referral'] : 'Not specified') . "</p>
                 </div>
 
                 <div class='section'>
