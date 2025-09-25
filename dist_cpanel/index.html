@@ -46,7 +46,12 @@
             <p class="text-lg text-gray-300 mb-8">Bid Request System</p>
             
             <div class="bg-gray-900 rounded-lg shadow-lg p-8 border border-gray-700">
-                <h2 class="text-2xl font-semibold text-white mb-6">Available Pages</h2>
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-semibold text-white">Available Pages</h2>
+                    <button onclick="logout()" class="text-sm text-gray-400 hover:text-white transition-colors">
+                        Logout
+                    </button>
+                </div>
                 <div class="space-y-4">
                     <a href="sdc_bidrequest.html" 
                        class="block w-full bg-black text-highlight font-medium py-3 px-6 rounded-md hover:bg-gray-600 transition-colors">
@@ -73,6 +78,33 @@
     <script>
         // Auto-update copyright year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Check authentication
+        window.addEventListener('load', function() {
+            const isAuthenticated = sessionStorage.getItem('sdc_authenticated');
+            const authTime = sessionStorage.getItem('sdc_auth_time');
+            
+            // Check if authentication is less than 24 hours old
+            if (!isAuthenticated || !authTime) {
+                window.location.href = 'portal-login.html';
+                return;
+            }
+            
+            const hoursSinceAuth = (Date.now() - parseInt(authTime)) / (1000 * 60 * 60);
+            if (hoursSinceAuth >= 24) {
+                // Clear expired authentication
+                sessionStorage.removeItem('sdc_authenticated');
+                sessionStorage.removeItem('sdc_auth_time');
+                window.location.href = 'portal-login.html';
+            }
+        });
+
+        // Logout function
+        function logout() {
+            sessionStorage.removeItem('sdc_authenticated');
+            sessionStorage.removeItem('sdc_auth_time');
+            window.location.href = 'portal-login.html';
+        }
     </script>
 </body>
 </html>

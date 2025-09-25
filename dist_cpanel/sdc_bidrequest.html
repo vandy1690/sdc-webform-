@@ -327,6 +327,37 @@
                     </div>
                 </div>
 
+                <!-- CAPTCHA -->
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        Security Verification <span class="text-red-500">*</span>
+                    </label>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-1">
+                            <input 
+                                type="text" 
+                                id="captchaInput"
+                                x-model="captchaInput"
+                                required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                placeholder="Enter the code shown"
+                            >
+                        </div>
+                        <div class="flex-shrink-0">
+                            <div id="captchaDisplay" class="bg-gray-100 border border-gray-300 rounded-md px-4 py-2 text-lg font-mono text-gray-800 select-none">
+                                <!-- CAPTCHA will be generated here -->
+                            </div>
+                        </div>
+                        <button 
+                            type="button" 
+                            onclick="generateCaptcha()"
+                            class="px-3 py-2 text-sm bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition-colors"
+                        >
+                            Refresh
+                        </button>
+                    </div>
+                </div>
+
                 <!-- Submit Button -->
                 <div class="flex items-center justify-between">
                     <p class="text-sm text-gray-500">
@@ -420,6 +451,25 @@
     <script>
         // Auto-update copyright year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // CAPTCHA functionality
+        let captchaAnswer = '';
+        
+        function generateCaptcha() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let result = '';
+            for (let i = 0; i < 5; i++) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            captchaAnswer = result;
+            window.captchaAnswer = captchaAnswer; // Make it globally accessible
+            document.getElementById('captchaDisplay').textContent = result;
+        }
+        
+        // Generate CAPTCHA on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            generateCaptcha();
+        });
         
         function bidForm() {
             return {
@@ -437,6 +487,7 @@
                     services: [],
                     referral: ''
                 },
+                captchaInput: '',
                 isSubmitting: false,
                 showSuccess: false,
                 showError: false,
@@ -446,6 +497,14 @@
                     this.isSubmitting = true;
                     
                     try {
+                        // Validate CAPTCHA
+                        if (this.captchaInput.toLowerCase() !== window.captchaAnswer.toLowerCase()) {
+                            this.showError = true;
+                            this.errorMessage = 'CAPTCHA verification failed. Please try again.';
+                            this.isSubmitting = false;
+                            generateCaptcha(); // Generate new CAPTCHA
+                            return;
+                        }
                         // Prepare form data for API
                         const apiData = {
                             firstName: this.formData.firstName,
@@ -512,9 +571,11 @@
                         services: [],
                         referral: ''
                     };
+                    this.captchaInput = '';
                     this.showSuccess = false;
                     this.showError = false;
                     this.errorMessage = '';
+                    generateCaptcha(); // Generate new CAPTCHA
                 }
             }
         }
