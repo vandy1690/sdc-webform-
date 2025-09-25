@@ -393,7 +393,7 @@
                     this.error = false;
                     
                     try {
-                        const response = await fetch('./api/bid-request.php');
+                        const response = await fetch('bid-requests.php');
                         const result = await response.json();
                         
                         if (result.success) {
@@ -413,7 +413,7 @@
 
                 async loadStatistics() {
                     try {
-                        const response = await fetch('./api/statistics.php');
+                        const response = await fetch('statistics.php');
                         const result = await response.json();
                         
                         if (result.success) {
@@ -454,7 +454,7 @@
 
                 async updateStatus(bidId, newStatus) {
                     try {
-                        const response = await fetch(`/api/bid-request.php/${bidId}/status`, {
+                        const response = await fetch(`bid-request.php?id=${bidId}`, {
                             method: 'PUT',
                             headers: {
                                 'Content-Type': 'application/json',
