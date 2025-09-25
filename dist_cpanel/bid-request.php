@@ -164,13 +164,12 @@ function handleGetBidRequests() {
 
 // Handle updating bid request status
 function handleUpdateBidRequest() {
-    $pathInfo = $_SERVER['PATH_INFO'] ?? '';
-
-    if (!preg_match('/^\/(\d+)\/status$/', $pathInfo, $matches)) {
-        jsonResponse(false, 'Invalid endpoint', null, 400);
+    // Get ID from query parameter or request body
+    $id = $_GET['id'] ?? null;
+    
+    if (!$id) {
+        jsonResponse(false, 'ID is required', null, 400);
     }
-
-    $id = $matches[1];
     $input = json_decode(file_get_contents('php://input'), true);
 
     if (!$input || !isset($input['status'])) {
